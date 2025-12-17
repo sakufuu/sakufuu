@@ -1,1 +1,96 @@
+/* Main content styling */
+main {
+  padding: 60px 40px 80px 40px;
+}
 
+.intro-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  padding: 0 40px;
+}
+
+.intro-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.intro-text h3 {
+  color: #0c5b71;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  font-family: "Alike", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.intro-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Alike", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.full-section {
+  margin-bottom: 50px;
+  padding: 0 40px;
+}
+
+.full-section h1 {
+  color: #0c5b71;
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-family: "Alike", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.full-section .full-line {
+  width: 100vw;
+  height: 2px;
+  background-color: #0c5b71;
+  margin-bottom: 15px;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.full-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.centered-section {
+  padding: 0 40px;
+}
+
+.centered-section h3 {
+  color: #0c5b71;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Alike", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.centered-section .centered-line {
+  height: 2px;
+  background-color: #0c5b71;
+  margin-bottom: 15px;
+}
+
+.centered-section {
+  padding: 0 40px;
+  margin-bottom: 50px;
+}
