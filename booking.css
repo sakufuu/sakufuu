@@ -1,25 +1,17 @@
-/* ===========================
-   GLOBALT: Farver/størrelser du kan ændre ét sted
-   (Gælder hele siden)
-   =========================== */
 :root {
   --page: #f3f3f3; /* BAGGRUND: hele siden udenfor den hvide boks */
   --app: #ffffff; /* BAGGRUND: den hvide boks (.app) */
 
-  --text: #4a4a4a; /* TEKST: standard tekstfarve */
-  --muted: #8c8c8c; /* TEKST: venstre overskrift (“Velkommen…”) */
-  --muted2: #9a9a9a; /* TEKST: højre overskrifter (“Tidsbestilling…”) */
+  --text: #4a4a4a; /* standard tekstfarve */
+  --muted: #8c8c8c; /* venstre overskrift “Velkommen…” */
+  --muted2: #9a9a9a; /* højre overskrifter “Tidsbestilling…” */
 
-  --input: #f1f1f1; /* INPUT: baggrundsfarve på felter */
-  --btn: #3f454c; /* KNAP: baggrundsfarve på “Log ind” */
+  --input: #f1f1f1; /* baggrundsfarve på felter */
+  --btn: #3f454c; /* baggrundsfarve på “Log ind” */
 
   --max: 980px; /* LAYOUT: max bredde på den hvide boks */
 }
 
-/* ===========================
-   GLOBALT: Basis/reset
-   (Gælder alle elementer)
-   =========================== */
 * {
   box-sizing: border-box;
 } /* width/height inkluderer padding/border */
@@ -28,24 +20,16 @@ body {
   height: 100%;
 } /* gør at siden kan fylde hele viewport */
 
-/* ===========================
-   HELE SIDEN: body
-   - tekst, baggrund, font rendering
-   =========================== */
 body {
   margin: 0; /* fjerner browserens standard margin */
   font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
     Helvetica, sans-serif;
-  /* 14px = grundstørrelse, 1.55 = linjeafstand, resten = font-fallbacks */
-  background: var(--page); /* bruger --page som baggrund */
-  color: var(--text); /* bruger --text som standard tekstfarve */
-  -webkit-font-smoothing: antialiased; /* pænere tekst på mac/webkit */
-  -moz-osx-font-smoothing: grayscale; /* pænere tekst på firefox/mac */
+  background: var(--page); /* bruger - page som baggrund */
+  color: var(--text); /* bruger - text som standard tekstfarve */
+  -webkit-font-smoothing: antialiased; /* pænere tekst på mac/webkit (chats ide) */
+  -moz-osx-font-smoothing: grayscale; /* pænere tekst på firefox/mac (chats ide) */
 }
 
-/* ===========================
-   LINKS: alle <a>
-   =========================== */
 a {
   color: inherit;
   text-decoration: none;
@@ -54,27 +38,18 @@ a:hover {
   text-decoration: underline;
 } /* underline når man hover */
 
-/* ===========================
-   LAYOUT: .page (ydre wrapper)
-   - centrerer .app
-   =========================== */
 .page {
-  display: flex; /* gør children flex (nem centring) */
+  display: flex; /* gør children flex */
   justify-content: center; /* centrerer indhold horisontalt */
   padding: 0 12px 10px; /* luft omkring layout: top/sider/bund */
 }
 
-/* ===========================
-   LAYOUT: .app (hvid boks)
-   =========================== */
 .app {
   width: min(var(--max), 100%); /* max 980px, ellers 100% på små skærme */
   background: var(--app); /* hvid baggrund */
 }
 
-/* ===========================
-   TOP: Hero (topbillede)
-   =========================== */
+/* TOP: Hero (topbillede) */
 .hero {
   background: #fff; /* fallback baggrund bag billedet */
 }
@@ -87,17 +62,12 @@ a:hover {
   object-position: center 68%; /* udsnit (x=center, y=68% ned) */
 }
 
-/* ===========================
-   INDHOLD: .main (inde i hvid boks)
-   =========================== */
 .main {
   position: relative; /* reference for .date-badge (absolute) */
   padding: 34px 60px 26px; /* luft inde i main: top / sider / bund */
 }
 
-/* ===========================
-   ELEMENT: Dato-badge (kalender)
-   =========================== */
+/* ELEMENT: Dato-badge (kalender) */
 .date-badge {
   position: absolute; /* flyder ovenpå main */
   right: 34px; /* afstand fra højre kant */
@@ -134,10 +104,6 @@ a:hover {
   text-transform: lowercase; /* små bogstaver */
 }
 
-/* ===========================
-   LAYOUT: Grid (desktop)
-   - venstre login + højre tekst
-   =========================== */
 .grid {
   display: grid; /* grid-layout */
   grid-template-columns: 320px 1fr; /* venstre 320px, højre fylder resten */
@@ -145,17 +111,11 @@ a:hover {
   align-items: stretch; /* stræk items i højden hvis muligt */
 }
 
-/* ===========================
-   VENSTRE: Login-kolonne
-   =========================== */
 .left {
   display: flex; /* gør venstre kolonne flex */
   flex-direction: column; /* elementer ovenpå hinanden */
 }
 
-/* ===========================
-   VENSTRE: Form (vigtigt for flag i bunden)
-   =========================== */
 .form {
   display: flex; /* form som flex-container */
   flex-direction: column; /* børn i kolonne */
@@ -163,9 +123,6 @@ a:hover {
   min-height: 520px; /* giver “bund” så flags kan ligge nederst (desktop) */
 }
 
-/* ===========================
-   VENSTRE: Overskrift
-   =========================== */
 .left__title {
   margin: 0 0 18px; /* afstand under overskrift */
   font-size: 22px; /* størrelse */
@@ -173,9 +130,6 @@ a:hover {
   color: var(--muted); /* grå */
 }
 
-/* ===========================
-   VENSTRE: Felter (labels + inputs)
-   =========================== */
 .field {
   margin: 0 0 16px; /* afstand under hvert felt */
 }
@@ -210,9 +164,6 @@ a:hover {
   color: #7a7a7a; /* placeholder farve */
 }
 
-/* ===========================
-   VENSTRE: Knap
-   =========================== */
 .btn {
   margin-top: 6px; /* luft over knap */
   width: 100%; /* fylder bredden */
@@ -230,9 +181,6 @@ a:hover {
   filter: brightness(1.03); /* lidt lysere ved hover */
 }
 
-/* ===========================
-   VENSTRE: Links under knap
-   =========================== */
 .links {
   margin-top: 14px; /* luft over links */
   display: flex; /* flex-layout */
@@ -245,9 +193,7 @@ a:hover {
   font-size: 13px; /* link-størrelse */
 }
 
-/* ===========================
-   VENSTRE: Flags
-   =========================== */
+/* VENSTRE: Flag */
 .langs {
   display: flex; /* flags i række */
   gap: 10px; /* afstand */
@@ -264,9 +210,6 @@ a:hover {
   display: block; /* fjern inline-mellemrum */
 }
 
-/* ===========================
-   HØJRE: Tekstkolonne
-   =========================== */
 .right__title {
   margin: 0 0 10px; /* afstand under titel */
   font-size: 25px; /* titel-størrelse */
@@ -281,9 +224,7 @@ a:hover {
   line-height: 1.65; /* linjeafstand */
 }
 
-/* ===========================
-   FOOTER: under den hvide boks
-   =========================== */
+/* FOOTER: under den hvide boks */
 .footer {
   width: min(var(--max), 100%); /* samme max bredde som app */
   margin: 0 auto; /* centrer footer */
@@ -325,11 +266,7 @@ a:hover {
   opacity: 0.9; /* let gennemsigtighed */
 }
 
-/* ===========================
-   MOBIL/TABLET (<= 860px)
-   - ændrer layout til én kolonne
-   - flytter flags efter teksten
-   =========================== */
+/* MOBIL/TABLET (<= 860px) */
 @media (max-width: 860px) {
   .main {
     padding: 22px 18px 22px; /* mindre luft på mobil */
@@ -373,9 +310,7 @@ a:hover {
   }
 }
 
-/* ===========================
-   EKSTRA LILLE MOBIL (<= 420px)
-   =========================== */
+/* EKSTRA LILLE MOBIL (<= 420px) */
 @media (max-width: 420px) {
   .hero__img {
     height: 270px; /* endnu lavere hero */

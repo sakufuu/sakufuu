@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="da">
   <head>
-    <!-- Tegnsæt + mobilskalering -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-    <!-- Titel i browser-fanen -->
     <title>Sakufu Hair Studio - Online Booking</title>
-
-    <!-- Her linker vi CSS-filen der styrer design/layout -->
     <link rel="stylesheet" href="booking.css" />
   </head>
 
   <body>
-    <!-- .page = “hele siden” (baggrund, centrering osv.) -->
     <div class="page">
-      <!-- .app = den hvide boks (selve “kortet”/containeren) -->
       <div class="app">
         <!-- HERO / TOPBILLEDE -->
         <header class="hero">
-          <!-- Skift src hvis du vil bruge et andet billede -->
           <img
             class="hero__img"
             src="https://sakufuu.bestilling.nu/images/header/sakufuu.png"
@@ -29,32 +21,25 @@
 
         <!-- MAIN = indholdet inde i den hvide boks -->
         <main class="main">
-          <!-- DATO-BADGE (den lille kalender-boks).
-             Indholdet (dec/16/tir) bliver sat med JS nederst -->
+          <!-- DATO-BADGE (den lille kalender-boks). -->
           <div class="date-badge" aria-label="Dato">
             <div class="date-badge__month" id="dbMonth">dec</div>
             <div class="date-badge__day" id="dbDay">16</div>
             <div class="date-badge__week" id="dbWeek">tir</div>
           </div>
 
-          <!-- GRID = 2 kolonner på desktop (venstre login + højre tekst).
-             På mobil bliver den lavet om til 1 kolonne (styres i CSS @media) -->
+          <!-- GRID = 2 kolonner på desktop (venstre login + højre tekst) -->
           <div class="grid">
-            <!-- VENSTRE KOLONNE -->
             <section class="left">
-              <!-- Overskrift over login -->
               <h1 class="left__title">Velkommen til tidsbestilling</h1>
 
-              <!-- FORM = login-formular.
-                 (action="#" betyder den ikke sender til en server endnu) -->
+              <!-- FORM = login-formular -->
               <form class="form" action="#" method="post" novalidate>
                 <!-- Felt 1: mobil -->
                 <label class="field">
-                  <!-- Teksten over inputfeltet -->
                   <span class="field__label"
                     >Indtast mobiltelefonnr. <span class="req">*</span></span
                   >
-                  <!-- Inputfeltet (styres visuelt i .field__input i CSS) -->
                   <input
                     class="field__input"
                     type="tel"
@@ -88,9 +73,7 @@
                   <a class="link" href="#">Glemt din bookingkode?</a>
                 </div>
 
-                <!-- FLAG / SPROG.
-                   På desktop ligger de i bunden af venstre kolonne via CSS.
-                   På mobil placeres de efter teksten via CSS order. -->
+                <!-- FLAG / SPROG.-->
                 <div class="langs langs--left" aria-label="Sprog">
                   <a class="flag" href="#" aria-label="Dansk">
                     <img
@@ -140,7 +123,6 @@
       </div>
     </div>
 
-    <!-- FOOTER ligger udenfor .app, så den står under den hvide boks -->
     <footer class="footer footer--outside">
       <div class="footer__line">
         Oplever du tekniske problemer, er du velkommen at sende en e-mail til
@@ -168,8 +150,6 @@
     </footer>
 
     <script>
-      // Sætter indholdet i dato-boksen (måned/dag/ugedag) ud fra dagens dato.
-      // Du kan fjerne hele scriptet hvis du vil “hardcode” datoen i HTML.
       (function () {
         const d = new Date();
         const month = d
