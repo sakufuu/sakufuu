@@ -1,0 +1,70 @@
+<!-- online-booking.html -->
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Online booking – Sakufu</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 80px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .nav-logo {
+        font-size: 28px;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-links a {
+        margin-left: 24px;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 999px;
+      }
+
+      .nav-links a.active {
+        background: #000;
+        color: #fff;
+      }
+
+      .booking-frame-wrapper {
+        height: calc(100vh - 60px); /* fuld højde minus menu */
+      }
+
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top menu -->
+    <header class="nav">
+      <div class="nav-logo">sakufu</div>
+      <nav class="nav-links">
+        <a href="online-booking.html" class="active">Online booking</a>
+        <a href="personale.html">Personale</a>
+        <a href="behandlinger.html">Behandlinger</a>
+        <a href="loyalitetskort.html">Loyalitets kort</a>
+      </nav>
+    </header>
+
+    <!-- Selve booking-siden indlejret -->
+    <main class="booking-frame-wrapper">
+      <iframe src="https://sakufuu.bestilling.nu/" title="Online booking">
+        Din browser understøtter ikke iframes.
+      </iframe>
+    </main>
+  </body>
+</html>
