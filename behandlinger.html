@@ -14,6 +14,12 @@
         <a href="index.html" class="logo">
           <img src="sakufulogo.webp" alt="Logo" />
         </a>
+        <!--Burger menu -->
+        <button class="burger-menu" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
         <nav class="nav">
           <a href="portfolie.html">Personale</a>
@@ -29,7 +35,7 @@
           <h3>Loyalitetskort</h3>
           <p>
             Hos Sakufu kører vi med en rabat ordning som vi kalder for
-            Loyalitets kort.<br />
+            loyalitetskort.<br />
             <br />
             Dette betyder at du får 20% på alle dine behandlinger. Derudover får
             du en gratis kur når du har fødselsdag. Kortet koster 300 kr og
@@ -50,52 +56,52 @@
         <h3>Klipninger</h3>
         <div class="centered-line"></div>
         <p>
-          Dameklip 690,00<br /><br />
-          Herreklip 540,00<br /><br />
-          Børneklip 7 - 12 år 460,00<br /><br />
-          Børneklip 0 - 6 år 430,00<br /><br />
-          Senior/studieklip dame  510,00<br /><br />
-          Senior/studieklip herre  460,00<br /><br />
-          Pandehår 210,00<br /><br />
-          Sider/kanter 410,00<br /><br />
-          Kanter 280,00<br /><br />
-          Skinfade  570,00<br /><br />
-          Skægklip 280,00
+          Dameklip 690,00<br /><br />
+          Herreklip 540,00<br /><br />
+          Børneklip 7 - 12 år 460,00<br /><br />
+          Børneklip 0 - 6 år 430,00<br /><br />
+          Senior/studieklip dame 510,00<br /><br />
+          Senior/studieklip herre 460,00<br /><br />
+          Pandehår 210,00<br /><br />
+          Sider/kanter 410,00<br /><br />
+          Kanter 280,00<br /><br />
+          Skinfade 570,00<br /><br />
+          Skægklip 280,00
         </p>
       </div>
       <div class="centered-section">
         <h3>Andre behandlinger</h3>
         <div class="centered-line"></div>
         <p>
-          Vask, føn & styling 400,00<br /><br />
-          Kur  210,00<br /><br />
-          Farvning af bryn 200,00<br /><br />
-          Farvning af vipper 200,00<br /><br />
-          Voksning af 1 område  80,00<br /><br />
-          Farvning af bryn + vipper 385,00
+          Vask, føn & styling 400,00<br /><br />
+          Kur 210,00<br /><br />
+          Farvning af bryn 200,00<br /><br />
+          Farvning af vipper 200,00<br /><br />
+          Voksning af 1 område 80,00<br /><br />
+          Farvning af bryn + vipper 385,00
         </p>
       </div>
       <div class="centered-section">
         <h3>Farvebehandlinger uden klip</h3>
         <div class="centered-line"></div>
         <p>
-          Toning fra 700,00<br /><br />
-          Reflekser/ striber fra 2.000,00<br /><br />
-          Balayage fra 2.400,00<br /><br />
-          Bundfarve fra 900,00<br /><br />
-          Helfarve (langt hår) fra 1.100,00<br /><br />
-          Helfarve (mellemlangt hår) fra 1.300,00<br /><br />
-          Helfarve (kort hår) fra 990,00<br /><br />
-          Reperation af striber  fra 1.800,00<br /><br />
-          Faceframe  fra 1.600,00<br /><br />
-          Hel afblegning (mellem langt hår) + toning fra 2.200,00<br /><br />
-          Hel afblegning (kort hår) + toning  fra 2.000,00<br /><br />
-          Striber med klip fra 2.680,00<br /><br />
-          Balayage med klip fra 3.080,00<br /><br />
-          Reparation af striber med klip fra 2.480,00<br /><br />
-          Toning med klip fra 1.380,00<br /><br />
-          Faceframe med klip fra 2.280,00<br /><br />
-          Hel afblegning (kort hår) + toning 2.580,00
+          Toning fra 700,00<br /><br />
+          Reflekser/ striber fra 2.000,00<br /><br />
+          Balayage fra 2.400,00<br /><br />
+          Bundfarve fra 900,00<br /><br />
+          Helfarve (langt hår) fra 1.100,00<br /><br />
+          Helfarve (mellemlangt hår) fra 1.300,00<br /><br />
+          Helfarve (kort hår) fra 990,00<br /><br />
+          Reperation af striber fra 1.800,00<br /><br />
+          Faceframe fra 1.600,00<br /><br />
+          Hel afblegning (mellem langt hår) + toning fra 2.200,00<br /><br />
+          Hel afblegning (kort hår) + toning fra 2.000,00<br /><br />
+          Striber med klip fra 2.680,00<br /><br />
+          Balayage med klip fra 3.080,00<br /><br />
+          Reparation af striber med klip fra 2.480,00<br /><br />
+          Toning med klip fra 1.380,00<br /><br />
+          Faceframe med klip fra 2.280,00<br /><br />
+          Hel afblegning (kort hår) + toning 2.580,00
         </p>
       </div>
     </main>
@@ -136,5 +142,16 @@
 
       <p class="footer-bottom">Sakufu frisørsalon</p>
     </footer>
+
+    <script>
+      <!--Burger menu -->
+      const burgerMenu = document.querySelector(".burger-menu");
+      const nav = document.querySelector(".nav");
+
+      burgerMenu.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        burgerMenu.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
