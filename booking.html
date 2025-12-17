@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <!-- Tegnsæt + mobilskalering -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Titel i browser-fanen -->
+    <title>Sakufu Hair Studio - Online Booking</title>
+
+    <!-- Her linker vi CSS-filen der styrer design/layout -->
+    <link rel="stylesheet" href="booking.css" />
+  </head>
+
+  <body>
+    <!-- .page = “hele siden” (baggrund, centrering osv.) -->
+    <div class="page">
+      <!-- .app = den hvide boks (selve “kortet”/containeren) -->
+      <div class="app">
+        <!-- HERO / TOPBILLEDE -->
+        <header class="hero">
+          <!-- Skift src hvis du vil bruge et andet billede -->
+          <img
+            class="hero__img"
+            src="https://sakufuu.bestilling.nu/images/header/sakufuu.png"
+            alt=""
+          />
+        </header>
+
+        <!-- MAIN = indholdet inde i den hvide boks -->
+        <main class="main">
+          <!-- DATO-BADGE (den lille kalender-boks).
+             Indholdet (dec/16/tir) bliver sat med JS nederst -->
+          <div class="date-badge" aria-label="Dato">
+            <div class="date-badge__month" id="dbMonth">dec</div>
+            <div class="date-badge__day" id="dbDay">16</div>
+            <div class="date-badge__week" id="dbWeek">tir</div>
+          </div>
+
+          <!-- GRID = 2 kolonner på desktop (venstre login + højre tekst).
+             På mobil bliver den lavet om til 1 kolonne (styres i CSS @media) -->
+          <div class="grid">
+            <!-- VENSTRE KOLONNE -->
+            <section class="left">
+              <!-- Overskrift over login -->
+              <h1 class="left__title">Velkommen til tidsbestilling</h1>
+
+              <!-- FORM = login-formular.
+                 (action="#" betyder den ikke sender til en server endnu) -->
+              <form class="form" action="#" method="post" novalidate>
+                <!-- Felt 1: mobil -->
+                <label class="field">
+                  <!-- Teksten over inputfeltet -->
+                  <span class="field__label"
+                    >Indtast mobiltelefonnr. <span class="req">*</span></span
+                  >
+                  <!-- Inputfeltet (styres visuelt i .field__input i CSS) -->
+                  <input
+                    class="field__input"
+                    type="tel"
+                    inputmode="tel"
+                    name="mobile"
+                    placeholder="Indtast mobiltelefonnr."
+                    required
+                  />
+                </label>
+
+                <!-- Felt 2: bookingkode -->
+                <label class="field">
+                  <span class="field__label"
+                    >Indtast din bookingkode <span class="req">*</span></span
+                  >
+                  <input
+                    class="field__input"
+                    type="password"
+                    name="code"
+                    placeholder="Indtast din bookingkode"
+                    required
+                  />
+                </label>
+
+                <!-- Login-knappen -->
+                <button class="btn" type="submit">Log ind</button>
+
+                <!-- Links under knappen -->
+                <div class="links">
+                  <a class="link" href="#">Opret ny bruger</a>
+                  <a class="link" href="#">Glemt din bookingkode?</a>
+                </div>
+
+                <!-- FLAG / SPROG.
+                   På desktop ligger de i bunden af venstre kolonne via CSS.
+                   På mobil placeres de efter teksten via CSS order. -->
+                <div class="langs langs--left" aria-label="Sprog">
+                  <a class="flag" href="#" aria-label="Dansk">
+                    <img
+                      src="https://sakufuu.bestilling.nu/_assets/images/flags/png/dk.png"
+                      alt="Dansk"
+                    />
+                  </a>
+                  <a class="flag" href="#" aria-label="English">
+                    <img
+                      src="https://sakufuu.bestilling.nu/_assets/images/flags/png/gb.png"
+                      alt="English"
+                    />
+                  </a>
+                </div>
+              </form>
+            </section>
+
+            <!-- HØJRE KOLONNE (INFO-TEKST) -->
+            <aside class="right">
+              <h2 class="right__title">Tidsbestilling</h2>
+              <p class="right__text">
+                Dette er en online service, som giver dig mulighed for at
+                bestille tid hos Sakufu. Du kan bestille tid
+                <strong>senest 30 minutter</strong> før ønsket behandling.
+                Ønsker du at bestille tid efter denne tidsfrist, skal du
+                venligst kontakte os direkte.
+              </p>
+
+              <h2 class="right__title">Nye brugere</h2>
+              <p class="right__text">
+                Ovenfor tastes din personlige bookingkode. Hvis du ikke har fået
+                en kode, skal du klikke på det første "link" under feltet.
+                Herefter sender vi koden som SMS til din mobiltelefon. Husk at
+                bookingkoden er personlig, og må ikke overdrages til andre.
+              </p>
+
+              <h2 class="right__title">Behandling</h2>
+              <p class="right__text">
+                En behandling er tit og ofte en meget individuel sag, hvilket
+                betyder at det ikke er alle behandlingsformer som kan bestilles
+                via nettet. Hvis du søger en behandling som ikke findes i
+                bookingsystemet, bedes du venligst rette henvendelse direkte.
+              </p>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- FOOTER ligger udenfor .app, så den står under den hvide boks -->
+    <footer class="footer footer--outside">
+      <div class="footer__line">
+        Oplever du tekniske problemer, er du velkommen at sende en e-mail til
+        vores
+        <a class="footer__link" href="#">it-support</a>
+      </div>
+
+      <div class="footer__line footer__line--terms">
+        <a class="footer__link" href="#">Handelsbetingelser</a>
+        <span class="payicons" aria-label="Betalingsikoner">
+          <img
+            src="https://sakufuu.bestilling.nu/_assets/images/visa.svg"
+            alt="Visa"
+          />
+          <img
+            src="https://sakufuu.bestilling.nu/_assets/images/mastercard.svg"
+            alt="Mastercard"
+          />
+          <img
+            src="https://sakufuu.bestilling.nu/_assets/images/mobilepay.svg"
+            alt="MobilePay"
+          />
+        </span>
+      </div>
+    </footer>
+
+    <script>
+      // Sætter indholdet i dato-boksen (måned/dag/ugedag) ud fra dagens dato.
+      // Du kan fjerne hele scriptet hvis du vil “hardcode” datoen i HTML.
+      (function () {
+        const d = new Date();
+        const month = d
+          .toLocaleDateString("da-DK", { month: "short" })
+          .replace(".", "")
+          .toLowerCase();
+        const week = d
+          .toLocaleDateString("da-DK", { weekday: "short" })
+          .replace(".", "")
+          .toLowerCase();
+        const day = String(d.getDate());
+
+        const m = document.getElementById("dbMonth");
+        const w = document.getElementById("dbWeek");
+        const da = document.getElementById("dbDay");
+
+        if (m) m.textContent = month;
+        if (w) w.textContent = week;
+        if (da) da.textContent = day;
+      })();
+    </script>
+  </body>
+</html>

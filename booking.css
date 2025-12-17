@@ -1,0 +1,388 @@
+/* ===========================
+   GLOBALT: Farver/størrelser du kan ændre ét sted
+   (Gælder hele siden)
+   =========================== */
+:root {
+  --page: #f3f3f3; /* BAGGRUND: hele siden udenfor den hvide boks */
+  --app: #ffffff; /* BAGGRUND: den hvide boks (.app) */
+
+  --text: #4a4a4a; /* TEKST: standard tekstfarve */
+  --muted: #8c8c8c; /* TEKST: venstre overskrift (“Velkommen…”) */
+  --muted2: #9a9a9a; /* TEKST: højre overskrifter (“Tidsbestilling…”) */
+
+  --input: #f1f1f1; /* INPUT: baggrundsfarve på felter */
+  --btn: #3f454c; /* KNAP: baggrundsfarve på “Log ind” */
+
+  --max: 980px; /* LAYOUT: max bredde på den hvide boks */
+}
+
+/* ===========================
+   GLOBALT: Basis/reset
+   (Gælder alle elementer)
+   =========================== */
+* {
+  box-sizing: border-box;
+} /* width/height inkluderer padding/border */
+html,
+body {
+  height: 100%;
+} /* gør at siden kan fylde hele viewport */
+
+/* ===========================
+   HELE SIDEN: body
+   - tekst, baggrund, font rendering
+   =========================== */
+body {
+  margin: 0; /* fjerner browserens standard margin */
+  font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    Helvetica, sans-serif;
+  /* 14px = grundstørrelse, 1.55 = linjeafstand, resten = font-fallbacks */
+  background: var(--page); /* bruger --page som baggrund */
+  color: var(--text); /* bruger --text som standard tekstfarve */
+  -webkit-font-smoothing: antialiased; /* pænere tekst på mac/webkit */
+  -moz-osx-font-smoothing: grayscale; /* pænere tekst på firefox/mac */
+}
+
+/* ===========================
+   LINKS: alle <a>
+   =========================== */
+a {
+  color: inherit;
+  text-decoration: none;
+} /* arver farve + ingen underline */
+a:hover {
+  text-decoration: underline;
+} /* underline når man hover */
+
+/* ===========================
+   LAYOUT: .page (ydre wrapper)
+   - centrerer .app
+   =========================== */
+.page {
+  display: flex; /* gør children flex (nem centring) */
+  justify-content: center; /* centrerer indhold horisontalt */
+  padding: 0 12px 10px; /* luft omkring layout: top/sider/bund */
+}
+
+/* ===========================
+   LAYOUT: .app (hvid boks)
+   =========================== */
+.app {
+  width: min(var(--max), 100%); /* max 980px, ellers 100% på små skærme */
+  background: var(--app); /* hvid baggrund */
+}
+
+/* ===========================
+   TOP: Hero (topbillede)
+   =========================== */
+.hero {
+  background: #fff; /* fallback baggrund bag billedet */
+}
+
+.hero__img {
+  width: 100%; /* fylder hele bredden */
+  display: block; /* fjerner “inline image” mellemrum */
+  height: 520px; /* højden på hero (desktop) */
+  object-fit: cover; /* beskærer billedet så det fylder */
+  object-position: center 68%; /* udsnit (x=center, y=68% ned) */
+}
+
+/* ===========================
+   INDHOLD: .main (inde i hvid boks)
+   =========================== */
+.main {
+  position: relative; /* reference for .date-badge (absolute) */
+  padding: 34px 60px 26px; /* luft inde i main: top / sider / bund */
+}
+
+/* ===========================
+   ELEMENT: Dato-badge (kalender)
+   =========================== */
+.date-badge {
+  position: absolute; /* flyder ovenpå main */
+  right: 34px; /* afstand fra højre kant */
+  top: -26px; /* rykker op (så den ligger over kanten) */
+  width: 46px; /* badge bredde */
+  border-radius: 6px; /* runde hjørner */
+  overflow: hidden; /* klipper indhold ved runde hjørner */
+  background: #fff; /* hvid baggrund */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* let kant */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18); /* skygge */
+  text-align: center; /* centrér tekst */
+}
+
+.date-badge__month {
+  background: #3a2f33; /* mørk topbjælke */
+  color: #fff; /* hvid tekst */
+  font-size: 12px; /* lille tekst */
+  padding: 4px 0 3px; /* luft inde i topbjælken */
+  text-transform: lowercase; /* små bogstaver */
+}
+
+.date-badge__day {
+  font-size: 18px; /* stort dag-tal */
+  font-weight: 700; /* fed */
+  padding: 4px 0 0; /* luft over tallet */
+  line-height: 1.1; /* tættere linjeafstand */
+  color: #222; /* mørk tekst */
+}
+
+.date-badge__week {
+  font-size: 12px; /* lille ugedag */
+  padding: 1px 0 5px; /* luft under */
+  color: #444; /* grå tekst */
+  text-transform: lowercase; /* små bogstaver */
+}
+
+/* ===========================
+   LAYOUT: Grid (desktop)
+   - venstre login + højre tekst
+   =========================== */
+.grid {
+  display: grid; /* grid-layout */
+  grid-template-columns: 320px 1fr; /* venstre 320px, højre fylder resten */
+  gap: 74px; /* afstand mellem kolonner */
+  align-items: stretch; /* stræk items i højden hvis muligt */
+}
+
+/* ===========================
+   VENSTRE: Login-kolonne
+   =========================== */
+.left {
+  display: flex; /* gør venstre kolonne flex */
+  flex-direction: column; /* elementer ovenpå hinanden */
+}
+
+/* ===========================
+   VENSTRE: Form (vigtigt for flag i bunden)
+   =========================== */
+.form {
+  display: flex; /* form som flex-container */
+  flex-direction: column; /* børn i kolonne */
+  flex: 1; /* fylder resten af venstre kolonne */
+  min-height: 520px; /* giver “bund” så flags kan ligge nederst (desktop) */
+}
+
+/* ===========================
+   VENSTRE: Overskrift
+   =========================== */
+.left__title {
+  margin: 0 0 18px; /* afstand under overskrift */
+  font-size: 22px; /* størrelse */
+  font-weight: 300; /* tynd */
+  color: var(--muted); /* grå */
+}
+
+/* ===========================
+   VENSTRE: Felter (labels + inputs)
+   =========================== */
+.field {
+  margin: 0 0 16px; /* afstand under hvert felt */
+}
+
+.field__label {
+  display: block; /* label på egen linje */
+  font-weight: 700; /* fed label */
+  color: #555; /* label-farve */
+  font-size: 13px; /* label-størrelse */
+  margin: 0 0 7px; /* afstand til input */
+}
+
+.req {
+  color: #c30000;
+} /* rød * */
+
+.field__input {
+  width: 100%; /* fyld bredden */
+  height: 40px; /* højde */
+  border: 0; /* ingen border */
+  background: var(--input); /* input-baggrund */
+  border-radius: 4px; /* afrunding */
+  padding: 0 14px; /* indvendig luft */
+  outline: none; /* fjerner standard fokus-outline */
+  color: #333; /* tekstfarve i felt */
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    /* lys kant øverst */ inset 0 0 0 1px rgba(0, 0, 0, 0.03); /* svag indvendig kant */
+}
+
+.field__input::placeholder {
+  color: #7a7a7a; /* placeholder farve */
+}
+
+/* ===========================
+   VENSTRE: Knap
+   =========================== */
+.btn {
+  margin-top: 6px; /* luft over knap */
+  width: 100%; /* fylder bredden */
+  height: 44px; /* højde */
+  border: 0; /* ingen kant */
+  border-radius: 4px; /* afrunding */
+  background: var(--btn); /* farve */
+  color: #fff; /* tekstfarve */
+  font-size: 15px; /* tekststørrelse */
+  cursor: pointer; /* hånd-cursor */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); /* svag skygge */
+}
+
+.btn:hover {
+  filter: brightness(1.03); /* lidt lysere ved hover */
+}
+
+/* ===========================
+   VENSTRE: Links under knap
+   =========================== */
+.links {
+  margin-top: 14px; /* luft over links */
+  display: flex; /* flex-layout */
+  flex-direction: column; /* links i kolonne */
+  gap: 10px; /* afstand mellem links */
+}
+
+.link {
+  color: #4a4a4a; /* link-farve */
+  font-size: 13px; /* link-størrelse */
+}
+
+/* ===========================
+   VENSTRE: Flags
+   =========================== */
+.langs {
+  display: flex; /* flags i række */
+  gap: 10px; /* afstand */
+}
+
+.langs--left {
+  margin-top: auto; /* DESKTOP: skubber flags helt i bunden */
+  padding-top: 24px; /* ekstra luft inden flags */
+}
+
+.flag img {
+  width: 18px; /* bredde */
+  height: auto; /* bevar proportioner */
+  display: block; /* fjern inline-mellemrum */
+}
+
+/* ===========================
+   HØJRE: Tekstkolonne
+   =========================== */
+.right__title {
+  margin: 0 0 10px; /* afstand under titel */
+  font-size: 25px; /* titel-størrelse */
+  font-weight: 300; /* tynd */
+  color: var(--muted2); /* grå */
+}
+
+.right__text {
+  margin: 0 0 22px; /* afstand under afsnit */
+  color: #616161; /* tekstfarve */
+  font-size: 13.5px; /* størrelse */
+  line-height: 1.65; /* linjeafstand */
+}
+
+/* ===========================
+   FOOTER: under den hvide boks
+   =========================== */
+.footer {
+  width: min(var(--max), 100%); /* samme max bredde som app */
+  margin: 0 auto; /* centrer footer */
+  text-align: center; /* centrer tekst */
+  color: #7a7a7a; /* farve */
+  font-size: 12px; /* størrelse */
+}
+
+.footer--outside {
+  margin-top: 14px; /* afstand fra hvid boks */
+  padding-bottom: 10px; /* luft i bunden */
+}
+
+.footer__line {
+  margin: 4px 0; /* afstand mellem linjer */
+}
+
+.footer__link {
+  text-decoration: underline; /* understreg links */
+}
+
+.footer__line--terms {
+  display: flex; /* lægger tekst + ikoner på samme linje */
+  justify-content: center; /* centrer vandret */
+  align-items: center; /* centrer lodret */
+  gap: 14px; /* afstand mellem handelsbetingelser og ikoner */
+  flex-wrap: wrap; /* wrap på små skærme */
+}
+
+.payicons {
+  display: inline-flex; /* ikoner i række */
+  gap: 10px; /* afstand */
+  align-items: center; /* lodret centrering */
+}
+
+.payicons img {
+  height: 16px; /* ikon-højde */
+  width: auto; /* bevar proportioner */
+  opacity: 0.9; /* let gennemsigtighed */
+}
+
+/* ===========================
+   MOBIL/TABLET (<= 860px)
+   - ændrer layout til én kolonne
+   - flytter flags efter teksten
+   =========================== */
+@media (max-width: 860px) {
+  .main {
+    padding: 22px 18px 22px; /* mindre luft på mobil */
+  }
+
+  .grid {
+    display: flex; /* flex i stedet for grid */
+    flex-direction: column; /* én kolonne */
+    gap: 26px; /* afstand mellem sektioner */
+  }
+
+  .left {
+    order: 1;
+  } /* login først */
+  .right {
+    order: 2;
+  } /* tekst bagefter */
+
+  .form {
+    min-height: unset; /* fjern fast højde på mobil */
+  }
+
+  .langs--left {
+    order: 3; /* flags efter teksten */
+    margin-top: 18px; /* normal afstand */
+    padding-top: 0; /* ingen ekstra padding på mobil */
+  }
+
+  .date-badge {
+    right: 16px; /* tættere på kanten på mobil */
+    top: -18px; /* lidt mindre op */
+  }
+
+  .hero__img {
+    height: 340px; /* lavere hero på mobil */
+    object-position: center 64%; /* andet udsnit */
+  }
+
+  .right__title {
+    font-size: 22px; /* mindre titler på mobil */
+  }
+}
+
+/* ===========================
+   EKSTRA LILLE MOBIL (<= 420px)
+   =========================== */
+@media (max-width: 420px) {
+  .hero__img {
+    height: 270px; /* endnu lavere hero */
+    object-position: center 60%; /* udsnit */
+  }
+
+  .left__title {
+    font-size: 20px; /* mindre venstre titel */
+  }
+}
