@@ -2,10 +2,11 @@ body {
   font-family: alike;
   color: #0c5b71;
   background: #e8e1d7;
-  max-width: 90%;
-  margin: 0 auto;
 }
 
+main {
+  margin-top: 60px;
+}
 .personale {
   display: flex;
   margin-bottom: 30px;
@@ -14,6 +15,9 @@ body {
 
 p {
   font-size: 1.5rem;
+  margin-top: 16px;
+  max-width: 920px;
+  line-height: 1.5;
 }
 
 .katrine img {
@@ -23,6 +27,8 @@ p {
 .portfolie {
   column-count: 3;
   column-gap: 14px;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .portfolie img {
