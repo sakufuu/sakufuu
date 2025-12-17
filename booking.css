@@ -224,46 +224,89 @@ a:hover {
   line-height: 1.65; /* linjeafstand */
 }
 
-/* FOOTER: under den hvide boks */
-.footer {
-  width: min(var(--max), 100%); /* samme max bredde som app */
-  margin: 0 auto; /* centrer footer */
-  text-align: center; /* centrer tekst */
-  color: #7a7a7a; /* farve */
-  font-size: 12px; /* størrelse */
+/* under den hvide boks */
+.outside-info {
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+  text-align: center;
+  color: #7a7a7a;
+  font-size: 12px;
+  margin-top: 14px;
+  padding-bottom: 10px;
 }
 
-.footer--outside {
-  margin-top: 14px; /* afstand fra hvid boks */
-  padding-bottom: 10px; /* luft i bunden */
+.outside-info .outside-line {
+  margin: 4px 0;
 }
 
-.footer__line {
-  margin: 4px 0; /* afstand mellem linjer */
+.outside-info .outside-link {
+  text-decoration: underline;
 }
 
-.footer__link {
-  text-decoration: underline; /* understreg links */
+.outside-info .outside-terms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.footer__line--terms {
-  display: flex; /* lægger tekst + ikoner på samme linje */
-  justify-content: center; /* centrer vandret */
-  align-items: center; /* centrer lodret */
-  gap: 14px; /* afstand mellem handelsbetingelser og ikoner */
-  flex-wrap: wrap; /* wrap på små skærme */
+.outside-info .outside-payicons {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
 }
 
-.payicons {
-  display: inline-flex; /* ikoner i række */
-  gap: 10px; /* afstand */
-  align-items: center; /* lodret centrering */
+.outside-info .outside-payicons img {
+  height: 16px;
+  width: auto;
+  opacity: 0.9;
 }
 
-.payicons img {
-  height: 16px; /* ikon-højde */
-  width: auto; /* bevar proportioner */
-  opacity: 0.9; /* let gennemsigtighed */
+/* --- FOOTER --- */
+.main-footer {
+  background-color: #2c422e; /* Litt mørkere enn Primary for kontrast */
+  color: #ddd;
+  padding: 60px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  gap: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.main-footer h3 {
+  color: var(--accent-color);
+  margin-top: 0, 0, 0;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.footer-info p,
+.footer-quick-links a,
+.footer-social a {
+  display: block;
+  margin: 10px 0;
+  color: #ccc;
+  text-decoration: none;
+  text-align: center;
+}
+.footer-info p strong {
+  color: white;
+}
+.footer-quick-links a:hover,
+.footer-social a:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff;
 }
 
 /* MOBIL/TABLET (<= 860px) */
