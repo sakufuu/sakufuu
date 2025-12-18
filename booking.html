@@ -33,11 +33,7 @@
       <div class="app">
         <!-- HERO / TOPBILLEDE -->
         <header class="hero">
-          <img
-            class="hero__img"
-            src="https://sakufuu.bestilling.nu/images/header/sakufuu.png"
-            alt=""
-          />
+          <img class="hero__img" src="salon.webp" alt="salon" />
         </header>
 
         <!-- MAIN = indholdet inde i den hvide boks -->
@@ -221,6 +217,17 @@
         if (w) w.textContent = week;
         if (da) da.textContent = day;
       })();
+    </script>
+
+    <script>
+      <!--Burger menu -->
+      const burgerMenu = document.querySelector(".burger-menu");
+      const nav = document.querySelector(".nav");
+
+      burgerMenu.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        burgerMenu.classList.toggle("active");
+      });
     </script>
   </body>
 </html>
