@@ -6,7 +6,7 @@ main {
 .intro-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
   margin-bottom: 60px;
   padding: 0 40px;
@@ -14,7 +14,7 @@ main {
 
 .intro-section img {
   width: 100%;
-  height: auto;
+  height: 95%;
   display: block;
 }
 
