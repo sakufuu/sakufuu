@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="da">
   <head>
-    <!-- Tegnsæt + mobilskalering -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-    <!-- Titel i browser-fanen -->
     <title>Sakufu Hair Studio - Online Booking</title>
-
-    <!-- Her linker vi CSS-filen der styrer design/layout -->
     <link rel="stylesheet" href="booking.css" />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <img src="sakufulogo.webp" alt="Logo" />
+      </a>
+      <!--Burger menu -->
+      <button class="burger-menu" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav">
+        <a href="portfolie.html">Personale</a>
+        <a href="behandlinger.html">Behandlinger</a>
+        <a href="booking.html">Online booking</a>
+      </nav>
+    </div>
+  </header>
 
   <body>
-    <!-- .page = “hele siden” (baggrund, centrering osv.) -->
     <div class="page">
-      <!-- .app = den hvide boks (selve “kortet”/containeren) -->
       <div class="app">
         <!-- HERO / TOPBILLEDE -->
         <header class="hero">
-          <!-- Skift src hvis du vil bruge et andet billede -->
           <img
             class="hero__img"
             src="https://sakufuu.bestilling.nu/images/header/sakufuu.png"
@@ -29,32 +42,25 @@
 
         <!-- MAIN = indholdet inde i den hvide boks -->
         <main class="main">
-          <!-- DATO-BADGE (den lille kalender-boks).
-             Indholdet (dec/16/tir) bliver sat med JS nederst -->
+          <!-- DATO-BADGE (den lille kalender-boks). -->
           <div class="date-badge" aria-label="Dato">
             <div class="date-badge__month" id="dbMonth">dec</div>
             <div class="date-badge__day" id="dbDay">16</div>
             <div class="date-badge__week" id="dbWeek">tir</div>
           </div>
 
-          <!-- GRID = 2 kolonner på desktop (venstre login + højre tekst).
-             På mobil bliver den lavet om til 1 kolonne (styres i CSS @media) -->
+          <!-- GRID = 2 kolonner på desktop (venstre login + højre tekst) -->
           <div class="grid">
-            <!-- VENSTRE KOLONNE -->
             <section class="left">
-              <!-- Overskrift over login -->
               <h1 class="left__title">Velkommen til tidsbestilling</h1>
 
-              <!-- FORM = login-formular.
-                 (action="#" betyder den ikke sender til en server endnu) -->
+              <!-- FORM = login-formular -->
               <form class="form" action="#" method="post" novalidate>
                 <!-- Felt 1: mobil -->
                 <label class="field">
-                  <!-- Teksten over inputfeltet -->
                   <span class="field__label"
                     >Indtast mobiltelefonnr. <span class="req">*</span></span
                   >
-                  <!-- Inputfeltet (styres visuelt i .field__input i CSS) -->
                   <input
                     class="field__input"
                     type="tel"
@@ -88,9 +94,7 @@
                   <a class="link" href="#">Glemt din bookingkode?</a>
                 </div>
 
-                <!-- FLAG / SPROG.
-                   På desktop ligger de i bunden af venstre kolonne via CSS.
-                   På mobil placeres de efter teksten via CSS order. -->
+                <!-- FLAG / SPROG.-->
                 <div class="langs langs--left" aria-label="Sprog">
                   <a class="flag" href="#" aria-label="Dansk">
                     <img
@@ -140,17 +144,16 @@
       </div>
     </div>
 
-    <!-- FOOTER ligger udenfor .app, så den står under den hvide boks -->
-    <footer class="footer footer--outside">
-      <div class="footer__line">
+    <section class="outside-info">
+      <div class="outside-line">
         Oplever du tekniske problemer, er du velkommen at sende en e-mail til
         vores
-        <a class="footer__link" href="#">it-support</a>
+        <a class="outside-link" href="#">it-support</a>
       </div>
 
-      <div class="footer__line footer__line--terms">
-        <a class="footer__link" href="#">Handelsbetingelser</a>
-        <span class="payicons" aria-label="Betalingsikoner">
+      <div class="outside-line outside-terms">
+        <a class="outside-link" href="#">Handelsbetingelser</a>
+        <span class="outside-payicons" aria-label="Betalingsikoner">
           <img
             src="https://sakufuu.bestilling.nu/_assets/images/visa.svg"
             alt="Visa"
@@ -165,11 +168,39 @@
           />
         </span>
       </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <h3>Kontakt os</h3>
+          <p><strong>Adresse:</strong> Rørholmsgade 6, København</p>
+          <p><strong>Telefon:</strong> 25 76 21 24</p>
+          <p><strong>Email:</strong> kontakt@sakufuu.dk</p>
+        </div>
+
+        <div class="footer-social">
+          <h3>Følg os</h3>
+          <a href="#">Instagram: @sakufuhairstudio</a>
+          <a href="#">Facebook: @sakufuhairstudio</a>
+        </div>
+
+        <div class="footer-info">
+          <h3>Åbningstider</h3>
+          <p><strong>Mandag:</strong> Lukket</p>
+          <p><strong>Tirsdag:</strong> 10:00 - 19:00</p>
+          <p><strong>Onsdag:</strong> 08:00 - 16:00</p>
+          <p><strong>Torsdag:</strong> 08:00 - 17:00</p>
+          <p><strong>Fredag:</strong> 08:00 - 18:00</p>
+          <p><strong>Lørdag:</strong> 08:00 - 15:00</p>
+          <p><strong>Søndag:</strong> Lukket</p>
+        </div>
+      </div>
+
+      <p class="footer-bottom">Sakufu frisørsalon</p>
     </footer>
 
     <script>
-      // Sætter indholdet i dato-boksen (måned/dag/ugedag) ud fra dagens dato.
-      // Du kan fjerne hele scriptet hvis du vil “hardcode” datoen i HTML.
       (function () {
         const d = new Date();
         const month = d
