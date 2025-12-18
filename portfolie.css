@@ -64,3 +64,17 @@ p {
   align-items: center;
   opacity: 0.5;
 }
+
+/*mobile site*/
+
+@media (max-width: 700px) {
+  .personale {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .katrine img {
+    width: 100%;
+    height: auto;
+  }
+}
